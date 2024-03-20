@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: 100vh;
+}
+
+.wallpaper-container {
+    position: relative;
+    height: calc(100vh - 25px);
+}
+
+.wallpaper-img {
+    margin: 0;
+    padding: 0;
+    background-image: url('./static/windows-98-background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: calc(100vh - 25px);
+    width: 100%;
+    z-index: 0;
+}
+
+.overlay-div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(246, 244, 244, 0.5);
+    z-index: 1;
+}
+
+
+.menu-bar {
+    height: 30px;
+    border: 1px solid white;
+    background-color: lightgray;
+    z-index: 1;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.start-button {
+    border: 1px solid white;
+    outline: 1px solid black;
+    z-index: 2;
+    position: relative;
+    height: 20px;
+    width: 40px;
+    left: 5px;
+}
+
+.time-div {
+    border: 1px solid white;
+    outline: 1px solid black;
+    height: 20px;
+    width: 70px;
+    position: absolute;
+    right: 5px;
+}
+
+.app-card {
+    border: 1px solid black;
+    height: 80px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
