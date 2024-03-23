@@ -32,60 +32,56 @@
 
                 <div id="right-menu-section">
                     <div id="programs-menu-div" class="menu-item">
-                    <a href="your_link_here" class="menu-link"></a>
                     </div>
+                    <div id="programs-menu-extension" class="menu-item-extension"></div>
                     <div id="photos-menu-div" class="menu-item">
-                        <a href="your_link_here" class="menu-link"></a>
                     </div>
+                    <div id="photos-menu-extension" class="menu-item-extension"></div>
                     <div id="applications-menu-div" class="menu-item">
-                        <a href="your_link_here" class="menu-link"></a>
                     </div>
+                    <div id="applications-menu-extension" class="menu-item-extension"></div>
                     <div id="games-menu-div" class="menu-item">
-                        <a href="your_link_here" class="menu-link"></a>
                     </div>
+                    <div id="games-menu-extension" class="menu-item-extension"></div>
                     <div id="settings-menu-div" class="menu-item">
-                        <a href="your_link_here" class="menu-link"></a>
                     </div>
                     <div id="find-menu-div" class="menu-item">
-                        <a href="your_link_here" class="menu-link"></a>
                     </div>
                     <div id="help-menu-div" class="menu-item">
-                        <a href="your_link_here" class="menu-link"></a>
                     </div>
                     <div id="run-menu-div" class="menu-item">
-                        <a href="your_link_here" class="menu-link"></a>
                     </div>
                     <div id="logoff-menu-div" class="menu-item">
-                        <a href="your_link_here" class="menu-link"></a>
                     </div>
                     <div id="shutdown-menu-div" class="menu-item">
-                        <a href="your_link_here" class="menu-link"></a>
-                </div>
+                    </div>
             </div>
         </div>
 
-
-        <div id="programs-menu-extension" class="menu-item-extension"></div>
-        <div id="photos-menu-extension" class="menu-item-extension"></div>
-        <div id="applications-menu-extension" class="menu-item-extension"></div>
-        <div id="games-menu-extension" class="menu-item-extension"></div>
-
-
-
-        <div id="app-one" class="app-window">
+        <div id="app-one-outer" class="outer-app-window">
             <img src="./static/app-window.png" alt="App Window">
+            <div class="inner-app-window">
+                <div id="app-one-inner"></div>
+            </div>
         </div>
-        <div id="app-two" class="app-window">
+        <div id="app-two-outer" class="outer-app-window">
             <img src="./static/app-window.png" alt="App Window">
+            <div class="inner-app-window">
+                <div id="app-two-inner"></div>
+            </div>
         </div>
-        </div>
-        <div id="app-three" class="app-window">
+        <div id="app-three-outer" class="outer-app-window">
             <img src="./static/app-window.png" alt="App Window">
+            <div class="inner-app-window">
+                <div id="app-three-inner"></div>
+            </div>
         </div>
         </div>
-        <div id="app-four" class="app-window">
+        <div id="app-four-outer" class="outer-app-window">
             <img src="./static/app-window.png" alt="App Window">
-        </div>
+            <div class="inner-app-window">
+                <div id="app-four-inner"></div>
+            </div>
         </div>
 
 
@@ -95,7 +91,7 @@
     <section class="menu-bar">
 
         <div id="start-button-div">
-            <img src="./static/start-button.png" alt="Start Button Image">
+            <img id="start-button" src="./static/start-button.png" alt="Start Button Image">
         </div>
         <div id="time-button-div">
             <button id="time-button">12:00 PM</button>

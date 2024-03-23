@@ -21,7 +21,7 @@ body {
     margin: 0;
     padding: 0;
     background-image: url('./static/windows-98-background.jpg');
-    background-color: lightgray;
+    background-color: rgb(188,190,189);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -43,7 +43,7 @@ body {
 .menu-bar {
     height: 35px;
     border: 2px solid white;
-    background-color: lightgray;
+    background-color: rgb(188,190,189);
     position: fixed;
     bottom: 0;
     left: 0;
@@ -152,14 +152,16 @@ body {
     left: 2px;
     display: flex;
     z-index: 1;
-    width: 14%
-    /* display: none; /* Initially hidden */
+    width: 14%;
+    display: none;
 }
 
 #start-menu img {
     width: 100%;
     height: 100%;
     object-fit: stretch;
+    z-index: 0;
+    background-color: rgb(188,190,189);
 }
 
 
@@ -194,6 +196,28 @@ body {
     width: 100%;
     position: absolute;
 }
+
+.menu-item:hover {
+    background-color: blue;
+    z-index: 1; /* Set z-index lower than the images when hovered */
+}
+
+#programs-menu-div:hover + #programs-menu-extension {
+    display: block;
+}
+
+#photos-menu-div:hover + #photos-menu-extension {
+    display: block;
+}
+
+#applications-menu-div:hover + #applications-menu-extension {
+    display: block;
+}
+
+#games-menu-div:hover + #games-menu-extension {
+    display: block;
+}
+
 
 #programs-menu-div {
     top: 0%;
@@ -242,59 +266,95 @@ body {
 .menu-item-extension {
     border: 1px solid black;
     position: absolute;
-    height: 19.9%;
-    width: 10%;
-    left: 14%;
-    background-color: lightgray;
+    background-color: rgb(188,190,189);
+    display: none;
+    height: 50%;
+    width: 90%;
+    left: 100%;
 }
 
 #programs-menu-extension {
-    top: 50%;
+    top: 0%;
 }
 
 #photos-menu-extension {
-    top: 55%;
+    top: 10%;
 }
 
 #applications-menu-extension {
-    top: 60%;
+    top: 20%;
 }
 
 #games-menu-extension {
-    top: 65%;
+    top: 30%;
 }
 
-/* APPLICATION WINDOWS */
+/* OUTER APPLICATION WINDOWS */
 
-.app-window {
+.outer-app-window {
     border: 1px solid black;
     position: absolute;
     height: 40%;
     width: 30%;
 }
 
-.app-window img{
+.outer-app-window img{
     width: 100%;
     height: 100%;
     object-fit: stretch;
 }
 
-#app-one {
+#app-one-outer {
     left: 20%;
     top: 5%;
 }
 
-#app-two {
+#app-two-outer {
     left: 25%;
     top: 15%;
 }
 
-#app-three {
+#app-three-outer {
     left: 30%;
     top: 25%;
 }
 
-#app-four {
+#app-four-outer {
     left: 35%;
     top: 35%;
+}
+
+/* INNER APPLICATIONS */
+
+.inner-app-window {
+    border: 1px solid black;
+    position: absolute;
+    height: 88%;
+    width: 97.8%;
+    left: 1%;
+    top: 6.6%;
+}
+
+#app-one-inner {
+    background-color: orange;
+    height: 100%;
+    width: 100%;
+}
+
+#app-two-inner {
+    background-color: blue;
+    height: 100%;
+    width: 100%;
+}
+
+#app-three-inner {
+    background-color: yellow;
+    height: 100%;
+    width: 100%;
+}
+
+#app-four-inner {
+    background-color: black;
+    height: 100%;
+    width: 100%;
 }
