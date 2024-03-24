@@ -51,7 +51,6 @@ body {
 }
 
 #start-button-div {
-    border: 1px solid blue;
     position: absolute;
     height: 28px;
     width: 70px;
@@ -71,19 +70,28 @@ body {
 }
 
 
-#time-button-div {
-    border: 1px solid orange;
+#time-menu-item {
     position: absolute;
     height: 30px;
     width: 80px;
     right: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#time-menu-item img {
+    width: 100%;
+    height: 100%;
 }
 
 
-#time-button {
+#current-time {
     position: absolute;
     height: 100%;
     width: 100%;
+    top: 20%;
+    left: 25%;
 }
 
 
@@ -131,11 +139,6 @@ body {
 #app-three-card {
     top: 60%;
 }
-
-
-
-
-
 
 
 /* START MENU */
@@ -333,7 +336,7 @@ body {
     top: 6.6%;
 }
 
-#app-one-inner {
+/* #app-one-inner {
     background-color: orange;
     height: 100%;
     width: 100%;
@@ -349,5 +352,5 @@ body {
     background-color: black;
     height: 100%;
     width: 100%;
-}
+} */
 

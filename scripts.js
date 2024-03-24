@@ -15,6 +15,7 @@ const appThreeImage = document.getElementById('app-three-card').querySelector('i
 
 
 
+
 // EVENT LISTENERS
 
 startButton.addEventListener('click', toggleStartMenu);
@@ -42,6 +43,8 @@ function toggleStartMenu() {
     }
 }
 
+// CLOSE APPLICATION WINDOWS WITH X BUTTON
+
 function closeApplicationWindow(event) {
         // Find the parent node (outer-app-window) of the close button clicked
         let outerAppWindow = event.target.closest('.outer-app-window');
@@ -49,6 +52,10 @@ function closeApplicationWindow(event) {
         // Hide the outer app window
         outerAppWindow.style.display = 'none';
 }
+
+// FETCHING & DISPLAYING CURRENT TIME
+
+
 
 
 
@@ -58,6 +65,7 @@ function closeApplicationWindow(event) {
 
 
 // NEEDS RE-FACTORING //
+// OPENS A DESKTOP APPLICATION WINDOW ON ICON DOUBLE CLICK
 
 function openAppOneWindow() {
     let appOneWindow = document.querySelector('#app-one-outer');
@@ -85,3 +93,25 @@ function openAppThreeWindow() {
         appThreeWindow.style.display = 'none';
     }
     }
+
+
+
+
+// GET AND DISPLAY THE CLOCK
+
+function currentTime() {
+    let now = new Date();
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+  
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+  
+    let formattedTime = hours + ':' + minutes
+  
+    const currentTimeElement = document.getElementById('current-time');
+    currentTimeElement.innerText = formattedTime;
+  }
+
+  setInterval(currentTime, 1000);
+  
+  currentTime();
