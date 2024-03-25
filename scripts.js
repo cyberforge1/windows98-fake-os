@@ -68,7 +68,7 @@ function closeApplicationWindow(event) {
 // OPENS A DESKTOP APPLICATION WINDOW ON ICON DOUBLE CLICK
 
 function openAppOneWindow() {
-    let appOneWindow = document.querySelector('#app-one-outer');
+    let appOneWindow = document.querySelector('#appOneOuter');
     if (appOneWindow.style.display === 'none') {
         appOneWindow.style.display = 'block';
     } else {
@@ -77,7 +77,7 @@ function openAppOneWindow() {
     }
 
 function openAppTwoWindow() {
-    let appTwoWindow = document.querySelector('#app-two-outer');
+    let appTwoWindow = document.querySelector('#appTwoOuter');
     if (appTwoWindow.style.display === 'none') {
         appTwoWindow.style.display = 'block';
     } else {
@@ -86,7 +86,7 @@ function openAppTwoWindow() {
     }
 
 function openAppThreeWindow() {
-    let appThreeWindow = document.querySelector('#app-three-outer');
+    let appThreeWindow = document.querySelector('#appThreeOuter');
     if (appThreeWindow.style.display === 'none') {
         appThreeWindow.style.display = 'block';
     } else {

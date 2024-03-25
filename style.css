@@ -6,11 +6,7 @@ body {
 }
 
 
-
-
 /* WALLPAPER SECTION */
-
-
 
 .wallpaper-container {
     position: relative;
@@ -30,12 +26,7 @@ body {
     position: relative;
 }
 
-
-
-
-
 /* MENU BAR */
-
 
 .menu-bar {
     height: 35px;
@@ -50,27 +41,27 @@ body {
     justify-content: center;
 }
 
-#start-button-div {
+#startButtonDiv {
     position: absolute;
     height: 28px;
     width: 70px;
     left: 4px;
 }
 
-#start-button-div img {
+#startButtonDiv img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-#start-button {
+#startButton {
     position: absolute;
     height: 100%;
     width: 100%;
 }
 
 
-#time-menu-item {
+#timeMenuItem {
     position: absolute;
     height: 30px;
     width: 80px;
@@ -80,13 +71,13 @@ body {
     align-items: center;
 }
 
-#time-menu-item img {
+#timeMenuItem img {
     width: 100%;
     height: 100%;
 }
 
 
-#current-time {
+#currentTime {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -101,7 +92,7 @@ body {
 
 
 
-#app-container {
+#appContainer {
     height: 40%;
     width: 12%;
     position: absolute;
@@ -128,15 +119,15 @@ body {
     object-fit: stretch;
 }
 
-#app-one-card {
+#appOneCard {
     top: 10%;
 }
 
-#app-two-card {
+#appTwoCard {
     top: 35%;
 }
 
-#app-three-card {
+#appThreeCard {
     top: 60%;
 }
 
@@ -144,7 +135,7 @@ body {
 /* START MENU */
 
 
-#start-menu {
+#startMenu {
     position: absolute;
     height: 50%;
     bottom: 0px;
@@ -154,7 +145,7 @@ body {
     display: none;
 }
 
-#start-menu img {
+#startMenu img {
     width: 100%;
     height: 100%;
     object-fit: stretch;
@@ -165,7 +156,7 @@ body {
 
 /* LEFT MENU CONTAINER */
 
-#left-menu-section {
+#leftMenuSection {
     border: 1px solid black;
     width: 12%;
     height: 99%;
@@ -175,7 +166,7 @@ body {
 
 /* RIGHT MENU CONTAINER */
 
-#right-menu-section {
+#rightMenuSection {
     border: 1px solid black;
     width: 87%;
     height: 99%;
@@ -198,60 +189,60 @@ body {
     background-color: blue;
 }
 
-#programs-menu-div:hover + #programs-menu-extension {
+#programsMenuDiv:hover + #programsMenuExtension {
     display: block;
 }
 
-#photos-menu-div:hover + #photos-menu-extension {
+#photosMenuDiv:hover + #photosMenuExtension {
     display: block;
 }
 
-#applications-menu-div:hover + #applications-menu-extension {
+#applicationsMenuDiv:hover + #applicationsMenuExtension {
     display: block;
 }
 
-#games-menu-div:hover + #games-menu-extension {
+#gamesMenuDiv:hover + #gamesMenuExtension {
     display: block;
 }
 
 
-#programs-menu-div {
+#programsMenuDiv {
     top: 0%;
 }
 
-#photos-menu-div {
+#photosMenuDiv {
     top: 10%;
 }
 
-#applications-menu-div{
+#applicationsMenuDiv{
     top: 20%
 }
 
-#games-menu-div {
+#gamesMenuDiv {
     top: 30%
 }
 
-#settings-menu-div {
+#settingsMenuDiv {
     top: 40%;
 }
 
-#find-menu-div {
+#findMenuDiv {
     top: 50%;
 }
 
-#help-menu-div {
+#helpMenuDiv {
     top: 60%;
 }
 
-#run-menu-div {
+#runMenuDiv {
     top: 70%;
 }
 
-#logoff-menu-div {
+#logoffMenuDiv {
     top: 80%;
 }
 
-#shutdown-menu-div {
+#shutdownMenuDiv {
     top: 90%;
 }
 
@@ -269,19 +260,19 @@ body {
     display: none;
 }
 
-#programs-menu-extension {
+#programsMenuExtension {
     top: 0%;
 }
 
-#photos-menu-extension {
+#photosMenuExtension {
     top: 10%;
 }
 
-#applications-menu-extension {
+#applicationsMenuExtension {
     top: 20%;
 }
 
-#games-menu-extension {
+#gamesMenuExtension {
     top: 30%;
 }
 
@@ -301,17 +292,17 @@ body {
     object-fit: stretch;
 }
 
-#app-one-outer {
+#appOneOuter {
     left: 20%;
     top: 5%;
 }
 
-#app-two-outer {
+#appTwoOuter {
     left: 25%;
     top: 15%;
 }
 
-#app-three-outer {
+#appThreeOuter {
     left: 30%;
     top: 25%;
 }
@@ -335,22 +326,3 @@ body {
     left: 1%;
     top: 6.6%;
 }
-
-/* #app-one-inner {
-    background-color: orange;
-    height: 100%;
-    width: 100%;
-}
-
-#app-two-inner {
-    background-color: blue;
-    height: 100%;
-    width: 100%;
-}
-
-#app-three-inner {
-    background-color: black;
-    height: 100%;
-    width: 100%;
-} */
-
