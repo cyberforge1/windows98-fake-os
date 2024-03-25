@@ -2,16 +2,16 @@ console.log('hello world')
 
 // JS VARIABLE ASSIGNMENT
 
-const startButton = document.getElementById('start-button')
-const startMenu = document.getElementById('start-menu')
+const startButton = document.getElementById('startButton')
+const startMenu = document.getElementById('startMenu')
 
-const closeButtonOne = document.getElementById('close-button-one')
-const closeButtonTwo = document.getElementById('close-button-two')
-const closeButtonThree = document.getElementById('close-button-three')
+const closeButtonOne = document.getElementById('closeButtonOne')
+const closeButtonTwo = document.getElementById('closeButtonTwo')
+const closeButtonThree = document.getElementById('closeButtonThree')
 
-const appOneImage = document.getElementById('app-one-card').querySelector('img');
-const appTwoImage = document.getElementById('app-two-card').querySelector('img');
-const appThreeImage = document.getElementById('app-three-card').querySelector('img');
+const appOneImage = document.getElementById('appOneCard').querySelector('img');
+const appTwoImage = document.getElementById('appTwoCard').querySelector('img');
+const appThreeImage = document.getElementById('appThreeCard').querySelector('img');
 
 
 
@@ -47,7 +47,7 @@ function toggleStartMenu() {
 
 function closeApplicationWindow(event) {
         // Find the parent node (outer-app-window) of the close button clicked
-        let outerAppWindow = event.target.closest('.outer-app-window');
+        let outerAppWindow = event.target.closest('.outerAppWindow');
     
         // Hide the outer app window
         outerAppWindow.style.display = 'none';
@@ -108,7 +108,7 @@ function currentTime() {
   
     let formattedTime = hours + ':' + minutes
   
-    const currentTimeElement = document.getElementById('current-time');
+    const currentTimeElement = document.getElementById('currentTime');
     currentTimeElement.innerText = formattedTime;
   }
 
