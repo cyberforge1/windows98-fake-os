@@ -17,7 +17,6 @@ const appThreeImage = document.getElementById('appThreeCard').querySelector('img
 // START MENU VISIBILITY TOGGLE
 
 const toggleStartMenu = () => {
-    // Toggle the display property of the start menu
     if (startMenu.style.display === 'none') {
         startMenu.style.display = 'flex';
     } else {
@@ -30,10 +29,7 @@ startButton.addEventListener('click', toggleStartMenu);
 // CLOSE APPLICATION WINDOWS WITH X BUTTON
 
 const closeApplicationWindow = (event) => {
-    // Find the parent node (outer-app-window) of the close button clicked
     let outerAppWindow = event.target.closest('.outer-app-window');
-
-    // Hide the outer app window
     outerAppWindow.style.display = 'none';
 }
 
