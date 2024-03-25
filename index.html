@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FakeOs Project</title>
     <link rel="stylesheet" href="./style.css">
-    <script src="scripts.js" defer></script>
+    <script type="module" src="./scripts.js" defer></script>
 </head>
 <body>
     <section class="wallpaper-container">
@@ -62,23 +62,47 @@
             <img src="./static/app-window.png" alt="App Window">
             <div class="close-button" id="closeButtonOne"></div>
             <div class="inner-app-window">
-                <iframe src="./modules/to-do/index.html" width="100%" height="100%" frameborder="0"></iframe>
+                <iframe src="./modules/module-three/index.html" width="100%" height="100%" frameborder="0"></iframe>
             </div>
         </div>
         <div id="appTwoOuter" class="outer-app-window">
             <img src="./static/app-window.png" alt="App Window">
             <div class="close-button" id="closeButtonTwo"></div>
             <div class="inner-app-window">
-                <iframe src="./modules/js-game/index.html" width="100%" height="100%" frameborder="0"></iframe>
+                <iframe src="./modules/module-two/index.html" width="100%" height="100%" frameborder="0"></iframe>
             </div>
         </div>
         <div id="appThreeOuter" class="outer-app-window">
             <img src="./static/app-window.png" alt="App Window">
             <div class="close-button" id="closeButtonThree"></div>
             <div class="inner-app-window">
-                <iframe src="./modules/calculator/index.html" width="100%" height="100%" frameborder="0"></iframe>
+                <div id="#calculatorBody">
+                <div class="calculator">
+                    <div id="display"></div>
+                    <div class="keys">
+                        <button onclick="addToDisplayDOM('7')">7</button>
+                        <button onclick="addToDisplayDOM('8')">8</button>
+                        <button onclick="addToDisplayDOM('9')">9</button>
+                        <button onclick="addToDisplayDOM('/')">÷</button>
+                        <button onclick="addToDisplayDOM('4')">4</button>
+                        <button onclick="addToDisplayDOM('5')">5</button>
+                        <button onclick="addToDisplayDOM('6')">6</button>
+                        <button onclick="addToDisplayDOM('*')">x</button>
+                        <button onclick="addToDisplayDOM('1')">1</button>
+                        <button onclick="addToDisplayDOM('2')">2</button>
+                        <button onclick="addToDisplayDOM('3')">3</button>
+                        <button onclick="addToDisplayDOM('-')">-</button>
+                        <button onclick="addToDisplayDOM('0')">0</button>
+                        <button onclick="addToDisplayDOM('.')">.</button>
+                        <button onclick="addToDisplayDOM('+')">+</button>
+                        <button></button>
+                        <button class="span-two" onclick="clearDisplayDOM()">AC</button>
+                        <button class="span-two"onclick="calculateDOM()">=</button>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
         </div>
 
 

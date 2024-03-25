@@ -206,45 +206,16 @@ body {
 }
 
 
-#programsMenuDiv {
-    top: 0%;
-}
-
-#photosMenuDiv {
-    top: 10%;
-}
-
-#applicationsMenuDiv{
-    top: 20%
-}
-
-#gamesMenuDiv {
-    top: 30%
-}
-
-#settingsMenuDiv {
-    top: 40%;
-}
-
-#findMenuDiv {
-    top: 50%;
-}
-
-#helpMenuDiv {
-    top: 60%;
-}
-
-#runMenuDiv {
-    top: 70%;
-}
-
-#logoffMenuDiv {
-    top: 80%;
-}
-
-#shutdownMenuDiv {
-    top: 90%;
-}
+#programsMenuDiv { top: 0%; }
+#photosMenuDiv { top: 10%; }
+#applicationsMenuDiv { top: 20%; }
+#gamesMenuDiv { top: 30%; }
+#settingsMenuDiv { top: 40%; }
+#findMenuDiv { top: 50%; }
+#helpMenuDiv { top: 60%; }
+#runMenuDiv { top: 70%; }
+#logoffMenuDiv { top: 80%; }
+#shutdownMenuDiv { top: 90%; }
 
 
 
@@ -295,16 +266,19 @@ body {
 #appOneOuter {
     left: 20%;
     top: 5%;
+    display: none;
 }
 
 #appTwoOuter {
     left: 25%;
     top: 15%;
+    display: none;
 }
 
 #appThreeOuter {
     left: 30%;
     top: 25%;
+    display: none;
 }
 
 
@@ -325,4 +299,43 @@ body {
     width: 97.8%;
     left: 1%;
     top: 6.6%;
+}
+
+
+
+
+
+/* CALCULATOR APP */ 
+
+#calculatorBody {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.calculator {
+    width: 20%;
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: whitesmoke;
+    overflow: hidden;
+}
+#display {
+    height: 60px;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: 30px;
+    text-align: right;
+    line-height: 60px;
+}
+.keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-radius: 8px;
+}
+
+.span-two{
+    grid-column: span 2;
 }

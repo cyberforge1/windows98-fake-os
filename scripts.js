@@ -1,4 +1,4 @@
-console.log('hello world')
+import { currentTime } from './timeModule.js';
 
 // JS VARIABLE ASSIGNMENT
 
@@ -29,8 +29,6 @@ appTwoImage.addEventListener('dblclick', openAppTwoWindow);
 appThreeImage.addEventListener('dblclick', openAppThreeWindow);
 
 
-// FUNCTION DEFINITION
-
 
 // START MENU VISIBILITY TOGGLE
 
@@ -47,21 +45,13 @@ function toggleStartMenu() {
 
 function closeApplicationWindow(event) {
         // Find the parent node (outer-app-window) of the close button clicked
-        let outerAppWindow = event.target.closest('.outerAppWindow');
+        let outerAppWindow = event.target.closest('.outer-app-window');
     
         // Hide the outer app window
         outerAppWindow.style.display = 'none';
 }
 
 // FETCHING & DISPLAYING CURRENT TIME
-
-
-
-
-
-
-
-
 
 
 // NEEDS RE-FACTORING //
@@ -97,21 +87,14 @@ function openAppThreeWindow() {
 
 
 
-// GET AND DISPLAY THE CLOCK
+// DISPLAY THE CLOCK
 
-function currentTime() {
-    let now = new Date();
-    let hours = now.getHours();
-    let minutes = now.getMinutes();
-  
-    minutes = minutes < 10 ? '0' + minutes : minutes;
-  
-    let formattedTime = hours + ':' + minutes
-  
+const updateClock = () => {
+    const formattedTime = currentTime();
     const currentTimeElement = document.getElementById('currentTime');
     currentTimeElement.innerText = formattedTime;
-  }
+};
 
-  setInterval(currentTime, 1000);
-  
-  currentTime();
+setInterval(updateClock, 1000);
+
+updateClock();
