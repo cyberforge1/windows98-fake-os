@@ -18,7 +18,7 @@
                 <img src="./static/my-documents.png" alt="Start Button Image">
             </div>
             <div id="appThreeCard" class="app-card">
-                <img src="./static/recycle-bin.png" alt="Start Button Image">
+                <img src="./static/calculator.png" alt="Start Button Image">
             </div>
         </div>
 
@@ -61,22 +61,43 @@
         <div id="appOneOuter" class="outer-app-window">
             <img src="./static/app-window.png" alt="App Window">
             <div class="close-button" id="closeButtonOne"></div>
-            <div class="inner-app-window">
-                <iframe src="./modules/module-three/index.html" width="100%" height="100%" frameborder="0"></iframe>
+            <div class="inner-app-window" id="moduleThreeBackground">
+                <h1 id="moduleThree">Module Three</h1>
             </div>
         </div>
         <div id="appTwoOuter" class="outer-app-window">
             <img src="./static/app-window.png" alt="App Window">
             <div class="close-button" id="closeButtonTwo"></div>
-            <div class="inner-app-window">
-                <iframe src="./modules/module-two/index.html" width="100%" height="100%" frameborder="0"></iframe>
+            <div class="inner-app-window" id="moduleTwoBackground">
+                <h1 id="moduleTwo">Module Two</h1>
             </div>
         </div>
         <div id="appThreeOuter" class="outer-app-window">
             <img src="./static/app-window.png" alt="App Window">
             <div class="close-button" id="closeButtonThree"></div>
-            <div class="inner-app-window">
-                <iframe src="./modules/module-one/index.html" width="100%" height="100%" frameborder="0"></iframe>
+            <div class="inner-app-window" id="moduleOneBackground">
+                <div class="calculator">
+                    <div id="display"></div>
+                    <div class="keys">
+                        <button>7</button>
+                        <button>8</button>
+                        <button>9</button>
+                        <button>÷</button>
+                        <button>4</button>
+                        <button>5</button>
+                        <button>6</button>
+                        <button>x</button>
+                        <button>1</button>
+                        <button>2</button>
+                        <button>3</button>
+                        <button>-</button>
+                        <button>0</button>
+                        <button>.</button>
+                        <button>+</button>
+                        <button class="span-two">AC</button>
+                        <button class="span-two">=</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

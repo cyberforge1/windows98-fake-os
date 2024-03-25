@@ -71,6 +71,41 @@ appTwoImage.addEventListener('dblclick', openAppTwoWindow);
 appThreeImage.addEventListener('dblclick', openAppThreeWindow);
 
 
+// CALCULATOR DISPLAY
+
+
+const addToDisplay = (value) => {
+    document.getElementById('display').textContent += value;
+};
+
+const clearDisplay = () => {
+    document.getElementById('display').textContent = '';
+};
+
+const calculate = () => {
+    let expression = document.getElementById('display').textContent;
+    let result = eval(expression);
+    document.getElementById('display').textContent = result;
+};
+
+
+const buttons = document.querySelectorAll('.keys button');
+
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        const value = button.textContent; 
+        if (value === '=') {
+            calculate(); 
+        } else if (value === 'AC') {
+            clearDisplay(); 
+        } else {
+            addToDisplay(value);
+        }
+    });
+});
+
+
+
 // DISPLAY THE CLOCK
 
 const updateClock = () => {
