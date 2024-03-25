@@ -1,4 +1,4 @@
-import { currentTime } from './timeModule.js';
+import { currentTime } from './time-module.js';
 
 // JS VARIABLE ASSIGNMENT
 
@@ -14,25 +14,9 @@ const appTwoImage = document.getElementById('appTwoCard').querySelector('img');
 const appThreeImage = document.getElementById('appThreeCard').querySelector('img');
 
 
-
-
-// EVENT LISTENERS
-
-startButton.addEventListener('click', toggleStartMenu);
-
-closeButtonOne.addEventListener('click', closeApplicationWindow);
-closeButtonTwo.addEventListener('click', closeApplicationWindow);
-closeButtonThree.addEventListener('click', closeApplicationWindow);
-
-appOneImage.addEventListener('dblclick', openAppOneWindow);
-appTwoImage.addEventListener('dblclick', openAppTwoWindow);
-appThreeImage.addEventListener('dblclick', openAppThreeWindow);
-
-
-
 // START MENU VISIBILITY TOGGLE
 
-function toggleStartMenu() {
+const toggleStartMenu = () => {
     // Toggle the display property of the start menu
     if (startMenu.style.display === 'none') {
         startMenu.style.display = 'flex';
@@ -41,50 +25,54 @@ function toggleStartMenu() {
     }
 }
 
+startButton.addEventListener('click', toggleStartMenu);
+
 // CLOSE APPLICATION WINDOWS WITH X BUTTON
 
-function closeApplicationWindow(event) {
-        // Find the parent node (outer-app-window) of the close button clicked
-        let outerAppWindow = event.target.closest('.outer-app-window');
-    
-        // Hide the outer app window
-        outerAppWindow.style.display = 'none';
+const closeApplicationWindow = (event) => {
+    // Find the parent node (outer-app-window) of the close button clicked
+    let outerAppWindow = event.target.closest('.outer-app-window');
+
+    // Hide the outer app window
+    outerAppWindow.style.display = 'none';
 }
 
-// FETCHING & DISPLAYING CURRENT TIME
+closeButtonOne.addEventListener('click', closeApplicationWindow);
+closeButtonTwo.addEventListener('click', closeApplicationWindow);
+closeButtonThree.addEventListener('click', closeApplicationWindow);
 
-
-// NEEDS RE-FACTORING //
 // OPENS A DESKTOP APPLICATION WINDOW ON ICON DOUBLE CLICK
 
-function openAppOneWindow() {
+const openAppOneWindow = () => {
     let appOneWindow = document.querySelector('#appOneOuter');
     if (appOneWindow.style.display === 'none') {
         appOneWindow.style.display = 'block';
     } else {
         appOneWindow.style.display = 'none';
     }
-    }
+}
 
-function openAppTwoWindow() {
+const openAppTwoWindow = () => {
     let appTwoWindow = document.querySelector('#appTwoOuter');
     if (appTwoWindow.style.display === 'none') {
         appTwoWindow.style.display = 'block';
     } else {
         appTwoWindow.style.display = 'none';
     }
-    }
+}
 
-function openAppThreeWindow() {
+const openAppThreeWindow = () => {
     let appThreeWindow = document.querySelector('#appThreeOuter');
     if (appThreeWindow.style.display === 'none') {
         appThreeWindow.style.display = 'block';
     } else {
         appThreeWindow.style.display = 'none';
     }
-    }
+}
 
-
+appOneImage.addEventListener('dblclick', openAppOneWindow);
+appTwoImage.addEventListener('dblclick', openAppTwoWindow);
+appThreeImage.addEventListener('dblclick', openAppThreeWindow);
 
 
 // DISPLAY THE CLOCK
