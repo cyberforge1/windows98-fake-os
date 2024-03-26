@@ -73,7 +73,6 @@ appThreeImage.addEventListener('dblclick', openAppThreeWindow);
 
 // CALCULATOR DISPLAY
 
-
 const addToDisplay = (value) => {
     document.getElementById('display').textContent += value;
 };
@@ -87,7 +86,6 @@ const calculate = () => {
     let result = eval(expression);
     document.getElementById('display').textContent = result;
 };
-
 
 const buttons = document.querySelectorAll('.keys button');
 
@@ -103,8 +101,6 @@ buttons.forEach(button => {
         }
     });
 });
-
-
 
 // DISPLAY THE CLOCK
 
