@@ -356,9 +356,8 @@ dialog {
 
 #calculator div {
     display: flex;
-    justify-content: flex-start; /* Align items to the left */
-    gap: 10px; /* This sets an even gap between the buttons */
-    border: 1px solid black;
+    justify-content: flex-start; 
+    gap: 10px;
     width: 80%;
     
 }
@@ -376,7 +375,6 @@ dialog {
     height: 45px;
     width: 40px;
     border-radius: 50%;
-    border: 2px solid black;
 }
 
 
@@ -384,8 +382,10 @@ dialog {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* This line ensures vertical centering */
-    height: 95%; /* This ensures it takes up the full height of the dialog */
+    justify-content: center;
+    height: 95%;
+    border: 1px solid black;
+    border-radius: 10px;
 }
 
 /* Weather App Styles */
@@ -441,47 +441,48 @@ dialog {
 #tasksList {
     list-style: none;
     padding: 0;
-    width: 100%; /* Maintain the full width for the parent container */
-    display: flex; /* Use Flexbox */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally in the flex container */
-    margin: 0 auto; /* Center the list itself if needed, though flex should handle its children */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
 
 }
 
 #app li {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px; /* Spacing between tasks */
+    margin-bottom: 20px; 
     width: 20%;
     height: 30px;
 }
 
 #app h2 {
-    text-align: center; /* Centers the text of the title */
+    text-align: center; 
 }
 
-#app input, #calculator input { /* Unified input styling */
+#app input {
     height: 20px;
     width: 60%;
     border-radius: 5px;
-    background-color: lightgray; /* Adjusted for unified styling */
-    text-align: right; /* Adjusted for calculator */
-    font-size: 30px; /* Adjusted for calculator */
+    background-color: lightgray;
+    text-align: right;
+    font-size: 30px;
     margin-bottom: 20px;
 }
 
 .removeTask, #addTaskBtn {
-    background-color: #dc3545; /* Bootstrap's red for removeTask */
+    background-color: #dc3545;
     color: white;
     border: none;
     padding: 5px 10px;
     border-radius: 4px;
     cursor: pointer;
+    margin-left: 50px;
 }
 
 #addTaskBtn {
-    background-color: #28a745; /* Override for addTaskBtn specific color */
+    background-color: #28a745;
     font-size: 14px;
     margin-bottom: 20px;
     margin-left: 20px;
@@ -491,7 +492,7 @@ dialog {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin-bottom: 20px; /* Space between the input section and the first list item */
+    margin-bottom: 20px;
 }
 
 #taskInput {
@@ -500,7 +501,11 @@ dialog {
 
 #tasksList li {
     display: flex;
-    justify-content: space-between; /* Assuming you want space between the contents of the list item */
-    margin-bottom: 20px; /* Space between each list item */
-    width: auto; /* Adjust based on your design requirements */
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width: auto;
+}
+
+#closeNotesModal {
+    margin-top: 10px;
 }

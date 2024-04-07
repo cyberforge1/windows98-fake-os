@@ -19,17 +19,9 @@ const toggleStartMenu = () => {
 
 startButton.addEventListener('click', toggleStartMenu);
 
-// MODALS
 
 
-
-
-
-
-
-
-
-// DISPLAY THE CLOCK
+// Display Clock
 
 const updateClock = () => {
     const formattedTime = currentTime();
@@ -40,20 +32,6 @@ const updateClock = () => {
 setInterval(updateClock, 1000);
 
 updateClock();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -134,15 +112,6 @@ const kelvinToCelsius = (kelvin) => {
 
 
 
-
-
-
-
-
-
-
-
-
 // Calculator App
 
 const initializeCalculator = () => {
@@ -153,7 +122,6 @@ const initializeCalculator = () => {
 
     calculatorBody.innerHTML = '';
 
-    // Function to create rows and buttons
     let createRowAndButtons = () => {
         let index = 0;
         for (let i = 0; i < numberOfRows; i++) {
@@ -166,7 +134,6 @@ const initializeCalculator = () => {
                 newButton.innerText = buttonArr[index];
                 newCalculatorRow.appendChild(newButton);
                 newButton.addEventListener('click', () => {
-                    // Implement button functionality
                     if(newButton.innerText === 'AC') {
                         calculatorInput.value = '';
                     } else {
@@ -212,10 +179,8 @@ document.getElementById('notesCard').addEventListener('dblclick', function() {
     const notesModal = document.getElementById('notesModal');
     const contentWrapper = notesModal.querySelector('.content-wrapper');
 
-    // Clear previous content
     contentWrapper.innerHTML = '';
 
-    // Create Task Tracker app elements
     const heading = document.createElement('h2');
     heading.textContent = 'Task Tracker App';
 
@@ -237,19 +202,17 @@ document.getElementById('notesCard').addEventListener('dblclick', function() {
     const tasksList = document.createElement('ul');
     tasksList.setAttribute('id', 'tasksList');
 
-    // Append Task Tracker app elements to modal
     contentWrapper.appendChild(heading);
     contentWrapper.appendChild(inputContainer);
     contentWrapper.appendChild(tasksList);
 
-    // Add Task functionality
     addTaskBtn.addEventListener('click', addTask);
 
     function addTask() {
-        if (taskInput.value.trim() === '') return; // Ignore empty inputs
+        if (taskInput.value.trim() === '') return; 
 
         const li = document.createElement('li');
-        const taskContent = document.createElement('span'); // To hold the task text
+        const taskContent = document.createElement('span');
         taskContent.textContent = taskInput.value;
 
         const removeButton = document.createElement('button');
@@ -275,31 +238,6 @@ document.getElementById('notesCard').addEventListener('dblclick', function() {
     notesModal.showModal();
 });
 
-document.getElementById('closeNotesModal').addEventListener('click', function() {
-    document.getElementById('notesModal').close();
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Notes Modal
-
 document.getElementById('notesCard').addEventListener('dblclick', function() {
     document.getElementById('notesModal').showModal();
 });
@@ -307,6 +245,7 @@ document.getElementById('notesCard').addEventListener('dblclick', function() {
 document.getElementById('closeNotesModal').addEventListener('click', function() {
     document.getElementById('notesModal').close();
 });
+
 
 
 
