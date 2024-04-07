@@ -61,7 +61,6 @@ updateClock();
 
 document.getElementById('weatherCard').addEventListener('dblclick', function() {
     document.getElementById('weatherModal').showModal();
-    // Clear previous weather app UI if exists
     const contentWrapper = document.querySelector('#weatherModal .content-wrapper');
     contentWrapper.innerHTML = ''; 
 
@@ -74,7 +73,6 @@ document.getElementById('weatherCard').addEventListener('dblclick', function() {
     `;
     contentWrapper.insertAdjacentHTML('beforeend', weatherAppHtml);
 
-    // Function to display weather information in a card format
     window.displayWeatherCard = (weatherData) => {
         const container = document.getElementById('weatherResultModal');
         container.innerHTML = '';
@@ -82,7 +80,7 @@ document.getElementById('weatherCard').addEventListener('dblclick', function() {
         const cardHtml = `
             <div class="weather-card">
                 <h2>Weather in ${weatherData.name}</h2>
-                <p>Temperature: ${kelvinToCelsius(weatherData.main.temp)}°C</p>
+                <p>Temperature: ${kelvinToCelsius(weatherData.main.temp)} °C</p>
                 <p>Weather: ${weatherData.weather[0].main} - ${weatherData.weather[0].description}</p>
                 <p>Humidity: ${weatherData.main.humidity}%</p>
                 <p>Wind Speed: ${weatherData.wind.speed} m/s</p>
@@ -92,14 +90,12 @@ document.getElementById('weatherCard').addEventListener('dblclick', function() {
         container.innerHTML = cardHtml;
     };
 
-    // Event listener for the Get Weather button inside modal
     document.getElementById('getWeatherButtonModal').addEventListener('click', async function() {
         const city = document.getElementById('cityInput').value;
-        const apiKey = '448f568c5483d5b0f66f39e0a3ac8fbc'; // Replace with your actual API key
+        const apiKey = '448f568c5483d5b0f66f39e0a3ac8fbc'; 
         const geoUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`;
 
         try {
-            // First, get the latitude and longitude
             const geoResponse = await fetch(geoUrl);
             const geoData = await geoResponse.json();
 
@@ -107,7 +103,6 @@ document.getElementById('weatherCard').addEventListener('dblclick', function() {
                 const { lat, lon } = geoData[0];
                 const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
 
-                // Now, get the weather using the lat and lon
                 const weatherResponse = await fetch(weatherUrl);
                 const weatherData = await weatherResponse.json();
 
@@ -121,15 +116,13 @@ document.getElementById('weatherCard').addEventListener('dblclick', function() {
         }
     });
 
-    // Event listener for closing the modal
     document.getElementById('closeWeatherModal').addEventListener('click', function() {
         document.getElementById('weatherModal').close();
     });
 });
 
-// Helper function to convert temperature from Kelvin to Celsius
 const kelvinToCelsius = (kelvin) => {
-    return (kelvin - 273.15).toFixed(2);
+    return Math.round((kelvin - 273.15));
 };
 
 
@@ -215,6 +208,76 @@ document.getElementById('closeCalculatorModal').addEventListener('click', functi
 
 
 
+document.getElementById('notesCard').addEventListener('dblclick', function() {
+    const notesModal = document.getElementById('notesModal');
+    const contentWrapper = notesModal.querySelector('.content-wrapper');
+
+    // Clear previous content
+    contentWrapper.innerHTML = '';
+
+    // Create Task Tracker app elements
+    const heading = document.createElement('h2');
+    heading.textContent = 'Task Tracker App';
+
+    const inputContainer = document.createElement('div');
+    inputContainer.setAttribute('id', 'inputContainer');
+    
+    const taskInput = document.createElement('input');
+    taskInput.setAttribute('type', 'text');
+    taskInput.setAttribute('id', 'taskInput');
+    taskInput.setAttribute('placeholder', 'Add a new task');
+    
+    const addTaskBtn = document.createElement('button');
+    addTaskBtn.setAttribute('id', 'addTaskBtn');
+    addTaskBtn.textContent = 'Add Task';
+
+    inputContainer.appendChild(taskInput);
+    inputContainer.appendChild(addTaskBtn);
+
+    const tasksList = document.createElement('ul');
+    tasksList.setAttribute('id', 'tasksList');
+
+    // Append Task Tracker app elements to modal
+    contentWrapper.appendChild(heading);
+    contentWrapper.appendChild(inputContainer);
+    contentWrapper.appendChild(tasksList);
+
+    // Add Task functionality
+    addTaskBtn.addEventListener('click', addTask);
+
+    function addTask() {
+        if (taskInput.value.trim() === '') return; // Ignore empty inputs
+
+        const li = document.createElement('li');
+        const taskContent = document.createElement('span'); // To hold the task text
+        taskContent.textContent = taskInput.value;
+
+        const removeButton = document.createElement('button');
+        removeButton.textContent = 'Remove';
+        removeButton.className = 'removeTask';
+        removeButton.onclick = function() {
+            tasksList.removeChild(li);
+        };
+
+        li.appendChild(taskContent);
+        li.appendChild(removeButton);
+
+        li.addEventListener('click', function(event) {
+            if (event.target !== removeButton) {
+                this.classList.toggle('completed');
+            }
+        });
+
+        tasksList.appendChild(li);
+        taskInput.value = '';
+    }
+
+    notesModal.showModal();
+});
+
+document.getElementById('closeNotesModal').addEventListener('click', function() {
+    document.getElementById('notesModal').close();
+});
 
 
 
