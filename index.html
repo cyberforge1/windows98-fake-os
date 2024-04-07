@@ -11,26 +11,70 @@
     <section class="wallpaper-container">
         <section class="wallpaper-img"></section>
         <div id="appContainer">
-            <div id="appOneCard" class="app-card">
+
+
+
+
+
+            <div id="weatherCard" class="app-card">
+                <img src="./static/weather.png" alt="Start Button Image">
+            </div>
+
+            <dialog id="weatherModal">
+                <div class="content-wrapper">
+                    <div id="weather">
+                        <input type="text" id="weatherInput">
+                        <div id="weatherBody">
+                        </div>
+                    </div>
+                    <button id="closeWeatherModal">Close</button>
+                </div>
+            </dialog>
+
+
+
+
+
+            <div id="calculatorCard" class="app-card">
+                <img src="./static/calculator.png" alt="Start Button Image">
+            </div>
+
+            <dialog id="calculatorModal">
+                <div class="content-wrapper">
+                    <div id="calculator">
+                        <input type="text" id="calculatorInput">
+                        <div id="calculatorBody">
+                        </div>
+                    </div>
+                    <button id="closeCalculatorModal">Close</button>
+                </div> 
+            </dialog>
+
+            
+
+
+
+
+            <div id="notesCard" class="app-card">
                 <img src="./static/notes.png" alt="Start Button Image">
             </div>
 
-            <dialog id="myModal">
-                <div id="calculator">
-                    <input type="text" id="calculatorInput">
-                    <div id="calculatorBody">
-                        <!-- The buttons will be dynamically inserted here by the JavaScript -->
+
+            <dialog id="notesModal">
+                <div class="content-wrapper">
+                    <div id="notes">
+                        <input type="text" id="notesInput">
+                        <div id="notesBody">
+                        </div>
                     </div>
+                    <button id="closeNotesModal">Close</button>
                 </div>
-                <button id="closeModal">Close</button>
             </dialog>
 
-            <div id="appTwoCard" class="app-card">
-                <img src="./static/weather.png" alt="Start Button Image">
-            </div>
-            <div id="appThreeCard" class="app-card">
-                <img src="./static/calculator.png" alt="Start Button Image">
-            </div>
+
+
+
+            
         </div>
 
 

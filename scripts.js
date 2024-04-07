@@ -5,13 +5,6 @@ import { currentTime } from './time-module.js';
 const startButton = document.getElementById('startButton')
 const startMenu = document.getElementById('startMenu')
 
-const closeButtonOne = document.getElementById('closeButtonOne')
-const closeButtonTwo = document.getElementById('closeButtonTwo')
-const closeButtonThree = document.getElementById('closeButtonThree')
-
-const appOneImage = document.getElementById('appOneCard').querySelector('img');
-const appTwoImage = document.getElementById('appTwoCard').querySelector('img');
-const appThreeImage = document.getElementById('appThreeCard').querySelector('img');
 
 
 // START MENU VISIBILITY TOGGLE
@@ -29,13 +22,6 @@ startButton.addEventListener('click', toggleStartMenu);
 // MODALS
 
 
-document.getElementById('appOneCard').addEventListener('dblclick', function() {
-    document.getElementById('myModal').showModal();
-});
-
-document.getElementById('closeModal').addEventListener('click', function() {
-    document.getElementById('myModal').close();
-});
 
 
 
@@ -58,11 +44,13 @@ updateClock();
 
 
 
-function initializeCalculator() {
+const initializeCalculator = () => {
     const buttonArr = ['AC', '+/-', '%', '÷', '7', '8', '9', 'x', '4', '5', '6', '-', '1', '2', '3', '+', '0', '.', '='];
     const numberOfRows = Math.ceil(buttonArr.length / 4);
     const calculatorBody = document.querySelector('#calculatorBody');
     const calculatorInput = document.querySelector('#calculatorInput');
+
+    calculatorBody.innerHTML = '';
 
     // Function to create rows and buttons
     let createRowAndButtons = () => {
@@ -93,7 +81,20 @@ function initializeCalculator() {
 }
 
 // Call `initializeCalculator` when the appropriate modal or section is opened
-document.getElementById('appThreeCard').addEventListener('dblclick', function() {
-    document.getElementById('myModal').showModal();
+document.getElementById('calculatorCard').addEventListener('dblclick', function() {
+    document.getElementById('calculatorModal').showModal();
     initializeCalculator(); // Initialize the calculator when the modal is shown
+});
+
+
+document.getElementById('closeWeatherModal').addEventListener('click', function() {
+    document.getElementById('weatherModal').close();
+});
+
+document.getElementById('closeCalculatorModal').addEventListener('click', function() {
+    document.getElementById('calculatorModal').close();
+});
+
+document.getElementById('closeNotesModal').addEventListener('click', function() {
+    document.getElementById('notesModal').close();
 });

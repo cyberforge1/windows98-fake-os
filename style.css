@@ -119,15 +119,15 @@ body {
     object-fit: stretch;
 }
 
-#appOneCard {
+#notesCard {
     top: 10%;
 }
 
-#appTwoCard {
+#weatherCard {
     top: 35%;
 }
 
-#appThreeCard {
+#calculatorCard {
     top: 60%;
 }
 
@@ -330,6 +330,7 @@ dialog {
 
 
 
+
 /* CALCULATOR STYLES */
 
 #calculator {
@@ -341,6 +342,7 @@ dialog {
     height: 450px;
     width: 300px;
     border-radius: 10%;
+    margin-bottom: 20px;
 }
 
 #calculator input {
@@ -357,6 +359,7 @@ dialog {
     gap: 10px; /* This sets an even gap between the buttons */
     border: 1px solid black;
     width: 80%;
+    
 }
 
 #calculatorBody {
@@ -365,7 +368,7 @@ dialog {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 60%;
+    height: 65%;
 }
 
 #calculator button {
@@ -373,4 +376,13 @@ dialog {
     width: 40px;
     border-radius: 50%;
     border: 2px solid black;
+}
+
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* This ensures it takes up the full height of the dialog */
 }
