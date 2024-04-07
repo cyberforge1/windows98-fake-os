@@ -331,7 +331,7 @@ dialog {
 
 
 
-/* CALCULATOR STYLES */
+/* Calculator Styles */
 
 #calculator {
     border: 1px solid black;
@@ -385,4 +385,36 @@ dialog {
     align-items: center;
     justify-content: center;
     height: 100%; /* This ensures it takes up the full height of the dialog */
+}
+
+/* Weather App Styles */
+
+#weatherApp {
+    text-align: center;
+    margin-top: 20px;
+    height: 525px;
+    width: 400px;
+}
+
+#weatherResult {
+    margin-top: 20px;
+}
+
+.weather-card {
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+    height: 300px;
+    width: 300px;
+    background-image: url('./weather.png');
+}
+
+#getWeatherButton {
+    background-color: green;
+}
+
+#weatherCardContainer{
+    display: flex;
+    justify-content: center;
 }
