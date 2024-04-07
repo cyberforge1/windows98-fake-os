@@ -26,81 +26,22 @@ const toggleStartMenu = () => {
 
 startButton.addEventListener('click', toggleStartMenu);
 
-// CLOSE APPLICATION WINDOWS WITH X BUTTON
-
-const closeApplicationWindow = (event) => {
-    let outerAppWindow = event.target.closest('.outer-app-window');
-    outerAppWindow.style.display = 'none';
-}
-
-closeButtonOne.addEventListener('click', closeApplicationWindow);
-closeButtonTwo.addEventListener('click', closeApplicationWindow);
-closeButtonThree.addEventListener('click', closeApplicationWindow);
-
-// OPENS A DESKTOP APPLICATION WINDOW ON ICON DOUBLE CLICK
-
-const openAppOneWindow = () => {
-    let appOneWindow = document.querySelector('#appOneOuter');
-    if (appOneWindow.style.display === 'none') {
-        appOneWindow.style.display = 'block';
-    } else {
-        appOneWindow.style.display = 'none';
-    }
-}
-
-const openAppTwoWindow = () => {
-    let appTwoWindow = document.querySelector('#appTwoOuter');
-    if (appTwoWindow.style.display === 'none') {
-        appTwoWindow.style.display = 'block';
-    } else {
-        appTwoWindow.style.display = 'none';
-    }
-}
-
-const openAppThreeWindow = () => {
-    let appThreeWindow = document.querySelector('#appThreeOuter');
-    if (appThreeWindow.style.display === 'none') {
-        appThreeWindow.style.display = 'block';
-    } else {
-        appThreeWindow.style.display = 'none';
-    }
-}
-
-appOneImage.addEventListener('dblclick', openAppOneWindow);
-appTwoImage.addEventListener('dblclick', openAppTwoWindow);
-appThreeImage.addEventListener('dblclick', openAppThreeWindow);
+// MODALS
 
 
-// CALCULATOR DISPLAY
-
-const addToDisplay = (value) => {
-    document.getElementById('display').textContent += value;
-};
-
-const clearDisplay = () => {
-    document.getElementById('display').textContent = '';
-};
-
-const calculate = () => {
-    let expression = document.getElementById('display').textContent;
-    let result = eval(expression);
-    document.getElementById('display').textContent = result;
-};
-
-const buttons = document.querySelectorAll('.keys button');
-
-buttons.forEach(button => {
-    button.addEventListener('click', () => {
-        const value = button.textContent; 
-        if (value === '=') {
-            calculate(); 
-        } else if (value === 'AC') {
-            clearDisplay(); 
-        } else {
-            addToDisplay(value);
-        }
-    });
+document.getElementById('appOneCard').addEventListener('dblclick', function() {
+    document.getElementById('myModal').showModal();
 });
+
+document.getElementById('closeModal').addEventListener('click', function() {
+    document.getElementById('myModal').close();
+});
+
+
+
+
+
+
 
 // DISPLAY THE CLOCK
 
@@ -113,3 +54,46 @@ const updateClock = () => {
 setInterval(updateClock, 1000);
 
 updateClock();
+
+
+
+
+function initializeCalculator() {
+    const buttonArr = ['AC', '+/-', '%', '÷', '7', '8', '9', 'x', '4', '5', '6', '-', '1', '2', '3', '+', '0', '.', '='];
+    const numberOfRows = Math.ceil(buttonArr.length / 4);
+    const calculatorBody = document.querySelector('#calculatorBody');
+    const calculatorInput = document.querySelector('#calculatorInput');
+
+    // Function to create rows and buttons
+    let createRowAndButtons = () => {
+        let index = 0;
+        for (let i = 0; i < numberOfRows; i++) {
+            const newCalculatorRow = document.createElement('div');
+            calculatorBody.appendChild(newCalculatorRow);
+            const buttonsInRow = Math.min(buttonArr.length - index, 4);
+
+            for (let j = 0; j < buttonsInRow; j++) {
+                const newButton = document.createElement('button');
+                newButton.innerText = buttonArr[index];
+                newCalculatorRow.appendChild(newButton);
+                newButton.addEventListener('click', () => {
+                    // Implement button functionality
+                    if(newButton.innerText === 'AC') {
+                        calculatorInput.value = '';
+                    } else {
+                        calculatorInput.value += newButton.innerText;
+                    }
+                });
+                index++;
+            }
+        }
+    };
+
+    createRowAndButtons();
+}
+
+// Call `initializeCalculator` when the appropriate modal or section is opened
+document.getElementById('appThreeCard').addEventListener('dblclick', function() {
+    document.getElementById('myModal').showModal();
+    initializeCalculator(); // Initialize the calculator when the modal is shown
+});

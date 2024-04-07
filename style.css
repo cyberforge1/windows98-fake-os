@@ -320,48 +320,57 @@ body {
 
 
 
-/* CALCULATOR APP */ 
+dialog {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 500px;
+    width: 500px;
+}
 
-#calculatorBody {
-    margin: 0;
-    padding: 0;
+
+
+/* CALCULATOR STYLES */
+
+#calculator {
+    border: 1px solid black;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 450px;
+    width: 300px;
+    border-radius: 10%;
 }
-.calculator {
-    width: 50%;
+
+#calculator input {
+     height: 80px;
+     width: 80%;
+     background-color: lightgray;
+     text-align: right;
+     font-size: 30px;
+}
+
+#calculator div {
+    display: flex;
+    justify-content: flex-start; /* Align items to the left */
+    gap: 10px; /* This sets an even gap between the buttons */
     border: 1px solid black;
-    border-radius: 8px;
-    background-color: whitesmoke;
-    overflow: hidden;
-}
-#display {
-    height: 60px;
-    padding-right: 20px;
-    padding-left: 20px;
-    font-size: 30px;
-    text-align: right;
-    line-height: 60px;
-}
-.keys {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    border-radius: 8px;
+    width: 80%;
 }
 
-.span-two{
-    grid-column: span 2;
+#calculatorBody {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 60%;
 }
 
-
-/* ADDITIONAL MODULES */
-
-#moduleTwo {
-    color: white;
-}
-
-#moduleThree {
-    color: black;
+#calculator button {
+    height: 45px;
+    width: 40px;
+    border-radius: 50%;
+    border: 2px solid black;
 }
