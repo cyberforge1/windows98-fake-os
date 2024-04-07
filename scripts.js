@@ -110,8 +110,6 @@ const kelvinToCelsius = (kelvin) => {
 
 
 
-
-
 // Calculator App
 
 const initializeCalculator = () => {
@@ -119,6 +117,10 @@ const initializeCalculator = () => {
     const numberOfRows = Math.ceil(buttonArr.length / 4);
     const calculatorBody = document.querySelector('#calculatorBody');
     const calculatorInput = document.querySelector('#calculatorInput');
+
+    let num1 = 0;
+    let num2 = 0;
+    let operator = 0;
 
     calculatorBody.innerHTML = '';
 
@@ -136,11 +138,21 @@ const initializeCalculator = () => {
                 newButton.addEventListener('click', () => {
                     if(newButton.innerText === 'AC') {
                         calculatorInput.value = '';
+                        num1 = 0;
+                        num2 = 0;
+                        operator = 0;
+                    } else if (['+', '-', 'x', '÷'].includes(newButton.innerText)) {
+                        num1 = parseFloat(calculatorInput.value);
+                        operator = newButton.innerText;
+                        calculatorInput.value = '';
+                    } else if (newButton.innerText === '=') {
+                        num2 = parseFloat(calculatorInput.value);
+                        calculatorInput.value = calculate(num1, num2, operator);
                     } else {
                         calculatorInput.value += newButton.innerText;
                     }
                 });
-                index++;
+                index += 1;
             }
         }
     };
@@ -156,6 +168,33 @@ document.getElementById('calculatorCard').addEventListener('dblclick', function(
 document.getElementById('closeCalculatorModal').addEventListener('click', function() {
     document.getElementById('calculatorModal').close();
 });
+
+
+const calculate = (num1, num2, operator) => {
+    if (operator === "+") {
+        return num1 + num2;
+    } else if (operator === "-") {
+        return num1 - num2;
+    } else if (operator === "x") { // Changed "*" to "x" for consistency with buttonArr
+        return num1 * num2;
+    } else if (operator === "÷") { // Changed "/" to "÷" for consistency with buttonArr
+        if (num2 === 0) {
+            return "Invalid numbers";
+        }
+        return num1 / num2;
+    } else {
+        return "Invalid operator";
+    }
+};
+
+
+
+
+
+
+
+
+
 
 
 
