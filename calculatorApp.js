@@ -11,19 +11,21 @@ export const initializeCalculator = () => {
 
     calculatorBody.innerHTML = '';
 
-    // Define the calculate function here
     const calculate = (num1, num2, operator) => {
-        switch (operator) {
-            case "+":
-                return num1 + num2;
-            case "-":
-                return num1 - num2;
-            case "x": // Changed "*" to "x" for consistency with buttonArr
-                return num1 * num2;
-            case "÷": // Changed "/" to "÷" for consistency with buttonArr
-                return num2 === 0 ? "Cannot divide by zero" : num1 / num2;
-            default:
-                return "Invalid operator";
+        if (operator === "+") {
+            return num1 + num2;
+        } else if (operator === "-") {
+            return num1 - num2;
+        } else if (operator === "x") {
+            return num1 * num2;
+        } else if (operator === "÷") {
+            if (num2 === 0) {
+                return "Cannot divide by zero";
+            } else {
+                return num1 / num2;
+            }
+        } else {
+            return "Invalid operator";
         }
     };
 
