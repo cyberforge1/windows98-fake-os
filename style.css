@@ -344,6 +344,8 @@ dialog {
     width: 300px;
     border-radius: 10%;
     margin-bottom: 20px;
+
+    background-color: darkgray
 }
 
 #calculator input {
@@ -408,7 +410,8 @@ dialog {
     margin-top: 20px;
     height: 300px;
     width: 300px;
-    background-image: url('./weather.png');
+    background-color: whitesmoke;
+    border: 2px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -508,4 +511,17 @@ dialog {
 
 #closeNotesModal {
     margin-top: 10px;
+}
+
+
+#calculatorBackground {
+    background-color: whitesmoke;
+}
+
+#weatherBackground {
+    background-image: url('./weather.png');
+}
+
+#notesBackground {
+    background-color: whitesmoke;
 }

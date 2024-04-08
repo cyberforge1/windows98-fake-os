@@ -21,6 +21,11 @@ startButton.addEventListener('click', toggleStartMenu);
 
 
 
+
+
+
+
+
 // Display Clock
 
 const updateClock = () => {
@@ -32,6 +37,13 @@ const updateClock = () => {
 setInterval(updateClock, 1000);
 
 updateClock();
+
+
+
+
+
+
+
 
 
 
@@ -144,11 +156,12 @@ const initializeCalculator = () => {
                     } else if (['+', '-', 'x', '÷'].includes(newButton.innerText)) {
                         num1 = parseFloat(calculatorInput.value);
                         operator = newButton.innerText;
-                        calculatorInput.value = '';
+                        calculatorInput.value = num1;
                     } else if (newButton.innerText === '=') {
                         num2 = parseFloat(calculatorInput.value);
                         calculatorInput.value = calculate(num1, num2, operator);
                     } else {
+                        calculatorInput.value = ''
                         calculatorInput.value += newButton.innerText;
                     }
                 });
@@ -191,27 +204,7 @@ const calculate = (num1, num2, operator) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Notes App
 
 
 document.getElementById('notesCard').addEventListener('dblclick', function() {
