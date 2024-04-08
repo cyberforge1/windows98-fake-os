@@ -1,7 +1,7 @@
-import { initializeMenu, updateClock } from './miscModules.js';
-import { initializeNotesApp } from './notesApp.js';
-import { initializeCalculator } from './calculatorApp.js';
-import { initializeWeatherApp } from './weatherApp.js';
+import { initializeMenu, updateClock } from './js/miscModules.js';
+import { initializeNotesApp } from './js/notesApp.js';
+import { initializeCalculator } from './js/calculatorApp.js';
+import { initializeWeatherApp } from './js/weatherApp.js';
 
 
 
