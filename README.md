@@ -1,2 +1,10 @@
-# windows98-fake-os
-An imitation Windows 98 OS that can run its own apps in the browser. Built in HTML, CSS and JavaScript
+![Alt text](./static/desktop-screenshot.png "Desktop Screenshot")
+
+
+![Alt text](./static/weather-app-screenshot.png "Weather App Screenshot")
+
+
+![Alt text](./static/calculator-app-screenshot.png "Calculator App Screenshot")
+
+
+![Alt text](./static/task-tracker-app-screenshot.png "Task Tracker App Screenshot")

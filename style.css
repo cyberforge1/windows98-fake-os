@@ -1,0 +1,531 @@
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: 100vh;
+}
+
+
+/* WALLPAPER SECTION */
+
+.wallpaper-container {
+    position: relative;
+    height: calc(100% - 35px);
+}
+
+.wallpaper-img {
+    margin: 0;
+    padding: 0;
+    background-image: url('./static/windows-98-background.jpg');
+    background-color: rgb(188,190,189);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+/* MENU BAR */
+
+.menu-bar {
+    height: 35px;
+    border: 2px solid white;
+    background-color: rgb(188,190,189);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#startButtonDiv {
+    position: absolute;
+    height: 28px;
+    width: 70px;
+    left: 4px;
+}
+
+#startButtonDiv img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#startButton {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+
+#timeMenuItem {
+    position: absolute;
+    height: 30px;
+    width: 80px;
+    right: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#timeMenuItem img {
+    width: 100%;
+    height: 100%;
+}
+
+
+#currentTime {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 20%;
+    left: 25%;
+}
+
+
+
+
+/* APPLICATIONS */
+
+
+
+#appContainer {
+    height: 40%;
+    width: 12%;
+    position: absolute;
+    top: 5%;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.app-card {
+    height: 20%;
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.app-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: stretch;
+}
+
+#notesCard {
+    top: 10%;
+}
+
+#weatherCard {
+    top: 35%;
+}
+
+#calculatorCard {
+    top: 60%;
+}
+
+
+/* START MENU */
+
+
+#startMenu {
+    position: absolute;
+    height: 50%;
+    bottom: 0px;
+    left: 2px;
+    display: flex;
+    width: 14%;
+    display: none;
+}
+
+#startMenu img {
+    width: 100%;
+    height: 100%;
+    object-fit: stretch;
+    background-color: rgb(188,190,189);
+}
+
+
+
+/* LEFT MENU CONTAINER */
+
+#leftMenuSection {
+    border: 1px solid black;
+    width: 12%;
+    height: 99%;
+    position: absolute;
+    left: 0.1%;
+}
+
+/* RIGHT MENU CONTAINER */
+
+#rightMenuSection {
+    border: 1px solid black;
+    width: 87%;
+    height: 99%;
+    position: absolute;
+    left: 12.1%;
+}
+
+
+/* MENU ITEMS AND SEPARATIONS */
+
+
+.menu-item {
+    border: 1px solid black;
+    height: 10%;
+    width: 100%;
+    position: absolute;
+}
+
+.menu-item:hover {
+    background-color: blue;
+}
+
+#programsMenuDiv:hover + #programsMenuExtension {
+    display: block;
+}
+
+#photosMenuDiv:hover + #photosMenuExtension {
+    display: block;
+}
+
+#applicationsMenuDiv:hover + #applicationsMenuExtension {
+    display: block;
+}
+
+#gamesMenuDiv:hover + #gamesMenuExtension {
+    display: block;
+}
+
+
+#programsMenuDiv { top: 0%; }
+#photosMenuDiv { top: 10%; }
+#applicationsMenuDiv { top: 20%; }
+#gamesMenuDiv { top: 30%; }
+#settingsMenuDiv { top: 40%; }
+#findMenuDiv { top: 50%; }
+#helpMenuDiv { top: 60%; }
+#runMenuDiv { top: 70%; }
+#logoffMenuDiv { top: 80%; }
+#shutdownMenuDiv { top: 90%; }
+
+
+
+/* MENU EXTENSION */
+
+.menu-item-extension {
+    border: 1px solid black;
+    position: absolute;
+    background-color: rgb(188,190,189);
+    height: 50%;
+    width: 90%;
+    left: 101%;
+    display: none;
+}
+
+#programsMenuExtension {
+    top: 0%;
+}
+
+#photosMenuExtension {
+    top: 10%;
+}
+
+#applicationsMenuExtension {
+    top: 20%;
+}
+
+#gamesMenuExtension {
+    top: 30%;
+}
+
+/* OUTER APPLICATION WINDOWS */
+
+.outer-app-window {
+    border: 1px solid black;
+    position: absolute;
+    height: 40%;
+    width: 30%;
+    display: none;
+}
+
+.outer-app-window img{
+    width: 100%;
+    height: 100%;
+    object-fit: stretch;
+}
+
+#appOneOuter {
+    left: 20%;
+    top: 5%;
+    display: none;
+}
+
+#appTwoOuter {
+    left: 25%;
+    top: 15%;
+    display: none;
+}
+
+#appThreeOuter {
+    left: 30%;
+    top: 25%;
+    display: none;
+}
+
+
+.close-button {
+    height: 3.8%;
+    width: 3.6%;
+    position: absolute;
+    top: 1.6%;
+    right: 1.8%;
+}
+
+/* INNER APPLICATIONS */
+
+.inner-app-window {
+    border: 1px solid black;
+    position: absolute;
+    height: 88%;
+    width: 97.8%;
+    left: 1%;
+    top: 6.6%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#moduleOneBackground {
+    background-color: darkcyan;
+}
+
+
+#moduleTwoBackground {
+    background-color: blue;
+
+}
+
+#moduleThreeBackground {
+    background-color: yellow;
+}
+
+
+
+dialog {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 600px;
+    width: 550px;
+    overflow: hidden;
+}
+
+
+
+
+/* Calculator Styles */
+
+#calculator {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+    width: 300px;
+    border-radius: 10%;
+    margin-bottom: 20px;
+
+    background-color: darkgray
+}
+
+#calculator input {
+     height: 80px;
+     width: 80%;
+     background-color: lightgray;
+     text-align: right;
+     font-size: 30px;
+}
+
+#calculator div {
+    display: flex;
+    justify-content: flex-start; 
+    gap: 10px;
+    width: 80%;
+    
+}
+
+#calculatorBody {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 65%;
+}
+
+#calculator button {
+    height: 45px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 95%;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+/* Weather App Styles */
+
+#weatherApp {
+    text-align: center;
+    margin-top: 20px;
+    height: 525px;
+    width: 400px;
+}
+
+#weatherResult {
+    margin-top: 20px;
+}
+
+.weather-card {
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+    height: 300px;
+    width: 300px;
+    background-color: whitesmoke;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#getWeatherButtonModal {
+    margin-top: 20px;
+}
+
+#weatherCardContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.btn-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+
+/* To Do List Styles */
+
+
+#app {
+    width: 30%;
+}
+
+#tasksList {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+
+}
+
+#app li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px; 
+    width: 20%;
+    height: 30px;
+}
+
+#app h2 {
+    text-align: center; 
+}
+
+#app input {
+    height: 20px;
+    width: 60%;
+    border-radius: 5px;
+    background-color: lightgray;
+    text-align: right;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.removeTask, #addTaskBtn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 50px;
+}
+
+#addTaskBtn {
+    background-color: #28a745;
+    font-size: 14px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+#inputContainer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#taskInput {
+    height: 20px
+}
+
+#tasksList li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width: auto;
+}
+
+#closeNotesModal {
+    margin-top: 10px;
+}
+
+
+#calculatorBackground {
+    background-color: whitesmoke;
+}
+
+#weatherBackground {
+    background-image: url('./static/weather-background.png');
+}
+
+#notesBackground {
+    background-color: whitesmoke;
+}
+
+#closeWeatherModal {
+    margin-top: 10px;
+}
