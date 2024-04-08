@@ -1,4 +1,6 @@
 import { currentTime } from './time-module.js';
+import { initializeNotesApp } from './notes-app.js';
+import { initializeCalculator } from './calculator-app.js';
 
 // JS VARIABLE ASSIGNMENT
 
@@ -18,12 +20,6 @@ const toggleStartMenu = () => {
 }
 
 startButton.addEventListener('click', toggleStartMenu);
-
-
-
-
-
-
 
 
 // Display Clock
@@ -124,160 +120,86 @@ const kelvinToCelsius = (kelvin) => {
 
 // Calculator App
 
-const initializeCalculator = () => {
-    const buttonArr = ['AC', '+/-', '%', '÷', '7', '8', '9', 'x', '4', '5', '6', '-', '1', '2', '3', '+', '0', '.', '='];
-    const numberOfRows = Math.ceil(buttonArr.length / 4);
-    const calculatorBody = document.querySelector('#calculatorBody');
-    const calculatorInput = document.querySelector('#calculatorInput');
+// const initializeCalculator = () => {
+//     const buttonArr = ['AC', '+/-', '%', '÷', '7', '8', '9', 'x', '4', '5', '6', '-', '1', '2', '3', '+', '0', '.', '='];
+//     const numberOfRows = Math.ceil(buttonArr.length / 4);
+//     const calculatorBody = document.querySelector('#calculatorBody');
+//     const calculatorInput = document.querySelector('#calculatorInput');
 
-    let num1 = 0;
-    let num2 = 0;
-    let operator = 0;
+//     let num1 = 0;
+//     let num2 = 0;
+//     let operator = 0;
 
-    calculatorBody.innerHTML = '';
+//     calculatorBody.innerHTML = '';
 
-    let createRowAndButtons = () => {
-        let index = 0;
-        for (let i = 0; i < numberOfRows; i++) {
-            const newCalculatorRow = document.createElement('div');
-            calculatorBody.appendChild(newCalculatorRow);
-            const buttonsInRow = Math.min(buttonArr.length - index, 4);
+//     let createRowAndButtons = () => {
+//         let index = 0;
+//         for (let i = 0; i < numberOfRows; i++) {
+//             const newCalculatorRow = document.createElement('div');
+//             calculatorBody.appendChild(newCalculatorRow);
+//             const buttonsInRow = Math.min(buttonArr.length - index, 4);
 
-            for (let j = 0; j < buttonsInRow; j++) {
-                const newButton = document.createElement('button');
-                newButton.innerText = buttonArr[index];
-                newCalculatorRow.appendChild(newButton);
-                newButton.addEventListener('click', () => {
-                    if(newButton.innerText === 'AC') {
-                        calculatorInput.value = '';
-                        num1 = 0;
-                        num2 = 0;
-                        operator = 0;
-                    } else if (['+', '-', 'x', '÷'].includes(newButton.innerText)) {
-                        num1 = parseFloat(calculatorInput.value);
-                        operator = newButton.innerText;
-                        calculatorInput.value = num1;
-                    } else if (newButton.innerText === '=') {
-                        num2 = parseFloat(calculatorInput.value);
-                        calculatorInput.value = calculate(num1, num2, operator);
-                    } else {
-                        calculatorInput.value = ''
-                        calculatorInput.value += newButton.innerText;
-                    }
-                });
-                index += 1;
-            }
-        }
-    };
+//             for (let j = 0; j < buttonsInRow; j++) {
+//                 const newButton = document.createElement('button');
+//                 newButton.innerText = buttonArr[index];
+//                 newCalculatorRow.appendChild(newButton);
+//                 newButton.addEventListener('click', () => {
+//                     if(newButton.innerText === 'AC') {
+//                         calculatorInput.value = '';
+//                         num1 = 0;
+//                         num2 = 0;
+//                         operator = 0;
+//                     } else if (['+', '-', 'x', '÷'].includes(newButton.innerText)) {
+//                         num1 = parseFloat(calculatorInput.value);
+//                         operator = newButton.innerText;
+//                         calculatorInput.value = num1;
+//                     } else if (newButton.innerText === '=') {
+//                         num2 = parseFloat(calculatorInput.value);
+//                         calculatorInput.value = calculate(num1, num2, operator);
+//                     } else {
+//                         calculatorInput.value = ''
+//                         calculatorInput.value += newButton.innerText;
+//                     }
+//                 });
+//                 index += 1;
+//             }
+//         }
+//     };
 
-    createRowAndButtons();
-}
+//     createRowAndButtons();
+// }
 
-document.getElementById('calculatorCard').addEventListener('dblclick', function() {
-    document.getElementById('calculatorModal').showModal();
-    initializeCalculator(); 
-});
+// document.getElementById('calculatorCard').addEventListener('dblclick', function() {
+//     document.getElementById('calculatorModal').showModal();
+//     initializeCalculator(); 
+// });
 
-document.getElementById('closeCalculatorModal').addEventListener('click', function() {
-    document.getElementById('calculatorModal').close();
-});
-
-
-const calculate = (num1, num2, operator) => {
-    if (operator === "+") {
-        return num1 + num2;
-    } else if (operator === "-") {
-        return num1 - num2;
-    } else if (operator === "x") { // Changed "*" to "x" for consistency with buttonArr
-        return num1 * num2;
-    } else if (operator === "÷") { // Changed "/" to "÷" for consistency with buttonArr
-        if (num2 === 0) {
-            return "Invalid numbers";
-        }
-        return num1 / num2;
-    } else {
-        return "Invalid operator";
-    }
-};
+// document.getElementById('closeCalculatorModal').addEventListener('click', function() {
+//     document.getElementById('calculatorModal').close();
+// });
 
 
+// const calculate = (num1, num2, operator) => {
+//     if (operator === "+") {
+//         return num1 + num2;
+//     } else if (operator === "-") {
+//         return num1 - num2;
+//     } else if (operator === "x") { // Changed "*" to "x" for consistency with buttonArr
+//         return num1 * num2;
+//     } else if (operator === "÷") { // Changed "/" to "÷" for consistency with buttonArr
+//         if (num2 === 0) {
+//             return "Invalid numbers";
+//         }
+//         return num1 / num2;
+//     } else {
+//         return "Invalid operator";
+//     }
+// };
 
 
+initializeCalculator()
 
-// Notes App
-
-
-document.getElementById('notesCard').addEventListener('dblclick', function() {
-    const notesModal = document.getElementById('notesModal');
-    const contentWrapper = notesModal.querySelector('.content-wrapper');
-
-    contentWrapper.innerHTML = '';
-
-    const heading = document.createElement('h2');
-    heading.textContent = 'Task Tracker App';
-
-    const inputContainer = document.createElement('div');
-    inputContainer.setAttribute('id', 'inputContainer');
-    
-    const taskInput = document.createElement('input');
-    taskInput.setAttribute('type', 'text');
-    taskInput.setAttribute('id', 'taskInput');
-    taskInput.setAttribute('placeholder', 'Add a new task');
-    
-    const addTaskBtn = document.createElement('button');
-    addTaskBtn.setAttribute('id', 'addTaskBtn');
-    addTaskBtn.textContent = 'Add Task';
-
-    inputContainer.appendChild(taskInput);
-    inputContainer.appendChild(addTaskBtn);
-
-    const tasksList = document.createElement('ul');
-    tasksList.setAttribute('id', 'tasksList');
-
-    contentWrapper.appendChild(heading);
-    contentWrapper.appendChild(inputContainer);
-    contentWrapper.appendChild(tasksList);
-
-    addTaskBtn.addEventListener('click', addTask);
-
-    function addTask() {
-        if (taskInput.value.trim() === '') return; 
-
-        const li = document.createElement('li');
-        const taskContent = document.createElement('span');
-        taskContent.textContent = taskInput.value;
-
-        const removeButton = document.createElement('button');
-        removeButton.textContent = 'Remove';
-        removeButton.className = 'removeTask';
-        removeButton.onclick = function() {
-            tasksList.removeChild(li);
-        };
-
-        li.appendChild(taskContent);
-        li.appendChild(removeButton);
-
-        li.addEventListener('click', function(event) {
-            if (event.target !== removeButton) {
-                this.classList.toggle('completed');
-            }
-        });
-
-        tasksList.appendChild(li);
-        taskInput.value = '';
-    }
-
-    notesModal.showModal();
-});
-
-document.getElementById('notesCard').addEventListener('dblclick', function() {
-    document.getElementById('notesModal').showModal();
-});
-
-document.getElementById('closeNotesModal').addEventListener('click', function() {
-    document.getElementById('notesModal').close();
-});
-
+initializeNotesApp()
 
 
 

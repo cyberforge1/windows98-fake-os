@@ -519,9 +519,13 @@ dialog {
 }
 
 #weatherBackground {
-    background-image: url('./weather.png');
+    background-image: url('./static/weather-background.png');
 }
 
 #notesBackground {
     background-color: whitesmoke;
+}
+
+#closeWeatherModal {
+    margin-top: 10px;
 }
