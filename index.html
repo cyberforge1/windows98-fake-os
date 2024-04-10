@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FakeOs Project</title>
+    <link rel="stylesheet" href="./style.css">
+    <script type="module" src="./scripts.js" defer></script>
+</head>
+<body>
+    <section class="wallpaper-container">
+        <section class="wallpaper-img"></section>
+        <div id="appContainer">
+
+
+
+
+
+            <div id="weatherCard" class="app-card">
+                <img src="./static/weather.png" alt="Start Button Image">
+            </div>
+
+            <dialog id="weatherModal">
+                <div class="content-wrapper" id="weatherBackground">
+                </div>
+                <div class="btn-wrapper">
+                <button id="closeWeatherModal">Close</button>
+                </div>
+            </dialog>
+
+
+
+
+
+            <div id="calculatorCard" class="app-card">
+                <img src="./static/calculator.png" alt="Start Button Image">
+            </div>
+
+            <dialog id="calculatorModal">
+                <div class="content-wrapper" id="calculatorBackground">
+                    <div id="calculator">
+                        <input type="text" id="calculatorInput">
+                        <div id="calculatorBody">
+                        </div>
+                    </div>
+                    <button id="closeCalculatorModal">Close</button>
+                </div> 
+            </dialog>
+
+            
+
+
+
+
+            <div id="notesCard" class="app-card">
+                <img src="./static/notes.png" alt="Start Button Image">
+            </div>
+
+
+            <dialog id="notesModal">
+                <div class="content-wrapper" id="notesBackground">
+                </div>
+                <div class="btn-wrapper">
+                    <button id="closeNotesModal">Close</button>
+                    </div>
+            </dialog>
+
+
+
+
+            
+        </div>
+
+
+
+        <div id="startMenu">
+                <img src="./static/menu-item.png" alt="Start Menu">
+
+                <div id="leftMenuSection"></div>
+
+
+                <div id="rightMenuSection">
+                    <div id="programsMenuDiv" class="menu-item">
+                    </div>
+                    <div id="programsMenuExtension" class="menu-item-extension"></div>
+                    <div id="photosMenuDiv" class="menu-item">
+                    </div>
+                    <div id="photosMenuExtension" class="menu-item-extension"></div>
+                    <div id="applicationsMenuDiv" class="menu-item">
+                    </div>
+                    <div id="applicationsMenuExtension" class="menu-item-extension"></div>
+                    <div id="gamesMenuDiv" class="menu-item">
+                    </div>
+                    <div id="gamesMenuExtension" class="menu-item-extension"></div>
+                    <div id="settingsMenuDiv" class="menu-item">
+                    </div>
+                    <div id="findMenuDiv" class="menu-item">
+                    </div>
+                    <div id="helpMenuDiv" class="menu-item">
+                    </div>
+                    <div id="runMenuDiv" class="menu-item">
+                    </div>
+                    <div id="logoffMenuDiv" class="menu-item">
+                    </div>
+                    <div id="shutdownMenuDiv" class="menu-item">
+                    </div>
+            </div>
+        </div>
+
+
+
+    </section>
+    <section class="menu-bar">
+
+        <div id="startButtonDiv">
+            <img id="startButton" src="./static/start-button.png" alt="Start Button Image">
+        </div>
+        <div id="timeMenuItem">
+            <img src="./static/time-button.png" alt="Time Button Image">
+            <div id="currentTime"></div>
+        </div>
+
+    </section>
+</body>
+</html>
