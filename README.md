@@ -1,5 +1,3 @@
-![Alt text](./static/desktop-screenshot.png "Desktop Screenshot")
-
 # README for FakeOS Project
 
 ## Project Overview
