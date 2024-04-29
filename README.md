@@ -1,4 +1,4 @@
-# README for FakeOS Project
+# README for Windows 98 FakeOS Project
 
 ## Project Overview
 
