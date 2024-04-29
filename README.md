@@ -55,9 +55,11 @@ The project employs a modular JavaScript approach, separating logic from DOM man
 
 ## Additions & Improvements
 
-- Added Windows 98-style icons and modals.
-- Introduced functionality for moving icons around the desktop.
-- Enhanced the visual and functional aspects of applications using SCSS.
+- Plan to add Windows 98-style icons and modals for a classic look.
+- Looking to make desktop icons movable for better customization.
+- Intend to use SCSS to improve the look and functionality of the applications.
+- Addition of additional start menu functionality
+- Refining the style and function of the apps contained within the project
 
 ## Learning Highlights
 
