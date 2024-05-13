@@ -6,7 +6,7 @@ FakeOS is a dynamic web application designed to replicate the aesthetic and func
 
 ## Deployment Link
 
-This Windows 98 fakeOS is live! Check it out [here](static/desktop-screenshot.png).
+This Windows 98 fakeOS is deployed. Check it out [here]((https://windows98-fake-os.netlify.app/)).
 
 ## Screenshot
 
