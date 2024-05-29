@@ -1,4 +1,13 @@
-
+const createDomElement = (elType, attributes, textContent) => {
+    const el = document.createElement(elType);
+    attributes.forEach((att) => {
+        el.setAttribute(att.name, att.value);
+    });
+    if (textContent) {
+        el.textContent = textContent;
+    }
+    return el;
+};
 
 export const initializeNotesApp = () => {
     document.getElementById('notesCard').addEventListener('dblclick', function() {
@@ -7,43 +16,42 @@ export const initializeNotesApp = () => {
     
         contentWrapper.innerHTML = '';
     
-        const heading = document.createElement('h2');
-        heading.textContent = 'Task Tracker App';
+        const heading = createDomElement('h2', [], 'Task Tracker App');
     
-        const inputContainer = document.createElement('div');
-        inputContainer.setAttribute('id', 'inputContainer');
+        const inputContainer = createDomElement('div', [{ name: 'id', value: 'inputContainer' }]);
         
-        const taskInput = document.createElement('input');
-        taskInput.setAttribute('type', 'text');
-        taskInput.setAttribute('id', 'taskInput');
-        taskInput.setAttribute('placeholder', 'Add a new task');
+        const taskInput = createDomElement('input', [
+            { name: 'type', value: 'text' },
+            { name: 'id', value: 'taskInput' },
+            { name: 'placeholder', value: 'Add a new task' }
+        ]);
         
-        const addTaskBtn = document.createElement('button');
-        addTaskBtn.setAttribute('id', 'addTaskBtn');
-        addTaskBtn.textContent = 'Add Task';
+        const addTaskBtn = createDomElement('button', [{ name: 'id', value: 'addTaskBtn' }], 'Add Task');
     
         inputContainer.appendChild(taskInput);
         inputContainer.appendChild(addTaskBtn);
     
-        const tasksList = document.createElement('ul');
-        tasksList.setAttribute('id', 'tasksList');
+        const tasksList = createDomElement('ul', [{ name: 'id', value: 'tasksList' }]);
     
         contentWrapper.appendChild(heading);
         contentWrapper.appendChild(inputContainer);
         contentWrapper.appendChild(tasksList);
     
         addTaskBtn.addEventListener('click', addTask);
+
+        taskInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                addTask();
+            }
+        });
     
         function addTask() {
             if (taskInput.value.trim() === '') return; 
     
-            const li = document.createElement('li');
-            const taskContent = document.createElement('span');
-            taskContent.textContent = taskInput.value;
+            const li = createDomElement('li', []);
+            const taskContent = createDomElement('span', [], taskInput.value);
     
-            const removeButton = document.createElement('button');
-            removeButton.textContent = 'Remove';
-            removeButton.className = 'removeTask';
+            const removeButton = createDomElement('button', [{ name: 'class', value: 'removeTask' }], 'Remove');
             removeButton.onclick = function() {
                 tasksList.removeChild(li);
             };
@@ -57,7 +65,7 @@ export const initializeNotesApp = () => {
                 }
             });
     
-            tasksList.appendChild(li);
+            tasksList.insertBefore(li, tasksList.firstChild); // Insert at the top
             taskInput.value = '';
         }
     
@@ -71,5 +79,4 @@ export const initializeNotesApp = () => {
     document.getElementById('closeNotesModal').addEventListener('click', function() {
         document.getElementById('notesModal').close();
     });
-    
-}
+};
