@@ -10,6 +10,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeWeatherApp();
     initializeCalculator();
     initializeNotesApp();
+    setInterval(updateClock, 1000);
 });
-
-setInterval(updateClock, 1000);

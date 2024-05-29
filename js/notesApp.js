@@ -37,19 +37,19 @@ export const initializeNotesApp = () => {
         contentWrapper.appendChild(inputContainer);
         contentWrapper.appendChild(tasksList);
     
-        addTaskBtn.addEventListener('click', addTask);
+        addTaskBtn.addEventListener('click', () => addTask(taskInput.value));
 
         taskInput.addEventListener('keypress', function(event) {
             if (event.key === 'Enter') {
-                addTask();
+                addTask(taskInput.value);
             }
         });
     
-        function addTask() {
-            if (taskInput.value.trim() === '') return; 
+        function addTask(task) {
+            if (task.trim() === '') return; 
     
             const li = createDomElement('li', []);
-            const taskContent = createDomElement('span', [], taskInput.value);
+            const taskContent = createDomElement('span', [], task);
     
             const removeButton = createDomElement('button', [{ name: 'class', value: 'removeTask' }], 'Remove');
             removeButton.onclick = function() {
@@ -72,11 +72,32 @@ export const initializeNotesApp = () => {
         notesModal.showModal();
     });
     
-    document.getElementById('notesCard').addEventListener('dblclick', function() {
-        document.getElementById('notesModal').showModal();
-    });
-    
     document.getElementById('closeNotesModal').addEventListener('click', function() {
         document.getElementById('notesModal').close();
     });
 };
+
+// Additional code to add event listeners for other icons and menu items
+
+document.getElementById('weatherCard').addEventListener('dblclick', function() {
+    document.getElementById('weatherModal').showModal();
+    initializeWeatherApp(); 
+});
+
+document.getElementById('closeWeatherModal').addEventListener('click', function() {
+    document.getElementById('weatherModal').close();
+});
+
+document.getElementById('calculatorCard').addEventListener('dblclick', function() {
+    document.getElementById('calculatorModal').showModal();
+    initializeCalculator(); 
+});
+
+document.getElementById('closeCalculatorModal').addEventListener('click', function() {
+    document.getElementById('calculatorModal').close();
+});
+
+document.getElementById('startButton').addEventListener('click', function() {
+    const startMenu = document.getElementById('startMenu');
+    toggleStartMenu(startMenu);
+});

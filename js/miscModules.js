@@ -13,16 +13,12 @@ const updateClock = () => {
     currentTimeElement.innerText = formattedTime;
 };
 
+
 const currentTime = () => {
     let now = new Date();
-    let hours = now.getHours();
-    let minutes = now.getMinutes();
-
-    minutes = minutes < 10 ? '0' + minutes : minutes;
-
-    let formattedTime = hours + ':' + minutes;
-
-    return formattedTime;
+    let options = { hour: '2-digit', minute: '2-digit', hour12: true };
+    let timeString = now.toLocaleTimeString([], options);
+    return timeString.replace(/am|pm/i, match => match.toUpperCase());
 };
 
 const initializeMenu = () => {
