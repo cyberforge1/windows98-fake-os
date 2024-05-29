@@ -11,7 +11,7 @@ This Windows 98 fakeOS is deployed. Check it out [here](https://windows98-fake-o
 
 ## Screenshot
 
-![fakeOS Desktop](static/desktop-screenshot.png)
+![fakeOS Desktop](static/project-screenshot.png)
 
 ## Table of Contents
 
