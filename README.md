@@ -1,8 +1,9 @@
-# README for Windows 98 FakeOS Project
+# Windows 98 FakeOS Project
 
 ## Project Overview
 
-FakeOS is a dynamic web application designed to replicate the aesthetic and functionality of Windows 98, using modern web technologies. The project serves as a practical exercise to solidify foundational skills in HTML, CSS, and JavaScript, focusing on building a non-responsive, single-page application that imitates a desktop operating system environment.
+This project is a dynamic web application that emulates the Windows 98 operating system, featuring a built-in calculator, a to-do app, and a weather API app. Developed with HTML, CSS, and JavaScript, it serves as a comprehensive practical exercise to enhance and solidify foundational web development skills.
+
 
 ## Deployment Link
 
@@ -55,9 +56,8 @@ The project employs a modular JavaScript approach, separating logic from DOM man
 
 ## Additions & Improvements
 
-- Plan to add Windows 98-style icons and modals for a classic look.
+- Plan to add Windows 98 modals for a classic look.
 - Looking to make desktop icons movable for better customization.
-- Intend to use SCSS to improve the look and functionality of the applications.
 - Addition of additional start menu functionality
 - Refining the style and function of the apps contained within the project
 
