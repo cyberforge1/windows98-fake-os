@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project is a dynamic web application that emulates the Windows 98 operating system, featuring a built-in calculator, a to-do app, and a weather API app. Developed with HTML, CSS, and JavaScript, it serves as a comprehensive practical exercise to enhance and solidify foundational web development skills.
+Built with with HTML, CSS, and JavaScript, this project is a dynamic web application that emulates the Windows 98 operating system, featuring a built-in calculator, a to-do app, and a weather API app. It serves as a comprehensive practical exercise to enhance and solidify foundational web development skills.
 
 
 ## Deployment Link
