@@ -1,4 +1,4 @@
-# Windows 98 FakeOS Project
+# Windows 98 FakeOS
 
 ## Project Overview
 
@@ -57,6 +57,7 @@ To interact with FakeOS, select an icon on the desktop to open an application. U
 - [ ] Increased functionality of the start menu
 - [ ] Improvements to Desktop Icons
 - [ ] Refining the style and function of the apps contained within the project
+- [ ] Re-deploy with API key 
 
 
 ## Learning Highlights
